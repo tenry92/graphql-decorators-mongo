@@ -1,5 +1,5 @@
 {
-  "name": "graphql-decorators-mongo",
+  "name": "@tenry/graphql-decorators-mongo",
   "version": "0.1.1",
   "description": "Provide mongo access using annotated classes and the GraphQL query language.",
   "keywords": [
