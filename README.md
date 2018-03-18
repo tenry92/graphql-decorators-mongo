@@ -75,25 +75,25 @@ input MongoOrderInput {
 }
 
 type Mutation {
-  addUser(user: TestUserEntityInput): TestUserEntityType
-  updateUser(id: ID, user: TestUserEntityInput): TestUserEntityType
-  removeUser(id: ID): TestUserEntityType
+  addUser(user: UserInput): UserType
+  updateUser(id: ID, user: UserInput): UserType
+  removeUser(id: ID): UserType
 }
 
 type Query {
-  users(filter: [MongoFilterInput], order: [MongoOrderInput], limit: Int, offset: Int): [TestUserEntityType]
+  users(filter: [MongoFilterInput], order: [MongoOrderInput], limit: Int, offset: Int): [UserType]
 }
 
-input TestUserEntityInput {
+input UserInput {
   data: JSON
-  friends: [TestUserEntityInput]
+  friends: [UserInput]
   id: ID
   name: String
 }
 
-type TestUserEntityType {
+type UserType {
   data: JSON
-  friends: [TestUserEntityType]
+  friends: [UserType]
   id: ID
   name: String
 }
