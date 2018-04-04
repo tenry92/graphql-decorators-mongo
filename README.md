@@ -16,6 +16,8 @@ import {decorators} from '@tenry/graphql-decorators';
 import {Manager, name} from '@tenry/graphql-decorators-mongo';
 
 // define an entity
+@decorators.entity()
+// define a name; class name is used by default
 @name('user')
 class User {
   @decorators.field('ID')
@@ -30,8 +32,8 @@ class User {
   data: Object;
 
   // use this syntax, if the data type is an array of something
-  @decorators.field({list: UserType})
-  friends: UserType[];
+  @decorators.field({list: User})
+  friends: User[];
 }
 
 // now set everything up
